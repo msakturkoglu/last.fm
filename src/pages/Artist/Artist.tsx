@@ -15,11 +15,11 @@ type TLocationState = {
 
 export const Artist = () => {
 
-  //const params = useParams<TArtistParams>();
+  const params = useParams<TArtistParams>();
 
-  const location = useLocation();
+  //const location = useLocation();
 
-  const state = location.state as TLocationState;
+ // const state = location.state as TLocationState;
   
   //const {isError, isLoading, data, isSuccess} = useQuery<TTopArtists, any, TTopArtists, TTopArtistsKey[] >(['artists'], apiController.getTopArtists);
 
@@ -43,7 +43,7 @@ export const Artist = () => {
   return (
     <ArtistContainer>
       <Card>
-        <h1>{state.artistName}</h1>
+        <h1>{params.artistName}</h1>
         {/* <ArtistImage src={image} alt="" /> */}
       </Card>
     </ArtistContainer>
