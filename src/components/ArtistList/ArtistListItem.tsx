@@ -27,7 +27,7 @@ const ArtistInfoWrapper = styled.div`
 export const ArtistListItem: React.FC<TListItemProps & {artistName: string}> = (props) => {
   
   return (
-    <ListItem {...props} _link={`${PATHS.ARTIST}/${props.artistName}`}>
+    <ListItem {...props} link={PATHS.ARTIST}>
       <ArtistInfoWrapper>
         <p>Artist</p>
         <h1>{props.artistName}</h1>

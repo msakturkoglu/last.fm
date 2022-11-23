@@ -8,7 +8,7 @@ export default function AppRoutes() {
     <BrowserRouter>
     <Routes>
         <Route path={PATHS.HOME} element={<Home />} />
-        <Route path={`/${PATHS.ARTIST}/:artistName`}element={<Artist />} />
+        <Route path={PATHS.ARTIST} element={<Artist />} />
     </Routes>
     </BrowserRouter>
     

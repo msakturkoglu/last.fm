@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Card } from '../../Card';
@@ -9,12 +9,18 @@ export type TListItemProps = {
         image?: string;
         listeners?: number;
         playcount?: number;
-        _link?: string;
+        link?: string;
+        artistName: string;
 }
 
-type TLinkWrapperProps = {
-    children?: React.ReactNode;
+type TLinkWrapperProps<T> = {
     link: string;
+    state?: T
+}
+
+type TLinkState = {
+    artistName: string;
+    image?: string;
 }
 
 const StyledLink = styled(Link)`
@@ -22,10 +28,10 @@ const StyledLink = styled(Link)`
     color: inherit;
 `;
 
-const LinkWrapper: React.FC<TLinkWrapperProps> = ({children, link}) => <StyledLink to={link}>{children}</StyledLink>
+const LinkWrapper = <T extends TLinkState>({children, link, state}: PropsWithChildren<TLinkWrapperProps<T>>) => <StyledLink to={link} state={state}>{children}</StyledLink>
 
 
-export const ListItem: React.FC<TListItemProps> = ({children, image, listeners, playcount, _link}) => {
+export const ListItem: React.FC<TListItemProps> = ({children, artistName, image, listeners, playcount, link}) => {
 
     const Content = () => 
         <ListItemWrapper>
@@ -46,7 +52,8 @@ export const ListItem: React.FC<TListItemProps> = ({children, image, listeners, 
     return(
         <>
         {
-            _link ? <LinkWrapper link={_link}><Content /></LinkWrapper> : <Content /> 
+            
+            link ? (<LinkWrapper link={link} state={{artistName, image}}><Content /></LinkWrapper>): <Content /> 
         }
         </>
     );
