@@ -1,7 +1,7 @@
 import { IAttributes } from "./attributes-model";
 import { ITrack } from "./tracks-model";
 
-type TTopTracksKey =  "tracks";
+export type TTopTracksKey =  "toptracks";
 
 export type TTopTracks = {
     [key in TTopTracksKey]: {

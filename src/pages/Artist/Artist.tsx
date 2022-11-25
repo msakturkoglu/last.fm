@@ -1,33 +1,26 @@
-import React, { useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { ArtistContainer, ArtistName, ArtistSection } from './Artist.css';
+import { useLocationState } from '../../hooks';
 import { Card } from '../../components/Card';
-import { apiController } from '../../service/controllers/lastfm-controller';
-import { ArtistContainer, ArtistImage } from './Artist.css';
-
-type TLocationState = {
-  artistName: string;
-  artistImage?: string;
-}
+import { TArtistPayload } from './artist-types';
+import { TopAlbums } from '../../components/TopAlbums';
+import { TopTracks } from '../../components/TopTracks';
+// import { TopAlbums } from '../../components/Lists/TopAlbums';
+// import { TopTracks } from '../../components/Lists/TopTracks';
 
 export const Artist = () => {
 
-  
-  const location = useLocation();
-
-  const state = location.state as TLocationState;
-
-  console.log(state);
-  
-  //const {isError, isLoading, data, isSuccess} = useQuery<TTopArtists, any, TTopArtists, TTopArtistsKey[] >(['artists'], apiController.getTopArtists);
-
-
+  const {artistName, image} = useLocationState<TArtistPayload>();
 
   return (
     <ArtistContainer>
-      <Card>
-        <h1>{state.artistName}</h1>
-        {/* <ArtistImage src={image} alt="" /> */}
+      <Card image={image} >
+        <ArtistName>{artistName}</ArtistName>
       </Card>
+
+      <ArtistSection>
+        <TopAlbums artistName={artistName} />
+        <TopTracks artistName={artistName} />
+      </ArtistSection> 
     </ArtistContainer>
   )
 }

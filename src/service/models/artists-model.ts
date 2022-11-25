@@ -1,11 +1,11 @@
 import { IBaseModel } from "./base-model";
 
-type TArtistImage = {
+export type TArtistImage = {
     "#text": string;
     size: string;
 }
 
 export interface IArtist extends IBaseModel {
-    streamable: boolean;
-    image: TArtistImage[];
+    streamable?: boolean;
+    image?: TArtistImage[];
 }

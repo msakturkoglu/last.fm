@@ -43,7 +43,6 @@ class APIController implements IAPIController {
 
         const apiUrl = `${this.apiUrl}/?method=${endPoint.toLowerCase()}&api_key=${this.apiKey}&format=${this.apiFormat}` + _params;
 
-        console.log(apiUrl);
         const res = await fetch(apiUrl);
 
         return res.json();

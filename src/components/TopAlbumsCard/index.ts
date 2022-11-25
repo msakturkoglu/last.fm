@@ -1,0 +1,1 @@
+export { TopAlbumsCard } from './TopAlbumsCard';

@@ -1,7 +1,7 @@
 import { IAlbum } from "./album-model";
 import { IAttributes } from "./attributes-model";
 
-type TTopAlbumsKey =  "topalbums";
+export type TTopAlbumsKey =  "topalbums";
 
 interface ITopAlbumAttributes extends IAttributes {
     artist: string;

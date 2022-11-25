@@ -1,6 +1,6 @@
 export interface IBaseModel {
     name: string;
-    playcount: number;
+    playcount?: number;
     listeners?: number;
     url: string;
     mbid: string;
