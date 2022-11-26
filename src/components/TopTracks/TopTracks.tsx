@@ -2,14 +2,15 @@ import { useTopTracks } from "../../hooks";
 import { ITrack } from "../../service/models/tracks-model";
 import utils from "../../utils";
 import { TCardItem } from "../Card/card-types";
-import { GenericList } from "../List";
+import { GenericContainer } from "../GenericContainer";
+import { GenericList } from "../GenericList";
 import { TopTracksCard } from "../TopTracksCard";
 
 export const TopTracks: React.FC<{artistName: string}> = ({artistName}) => {
 
   const renderListItem = (item: ITrack) => {
     const cardItems: TCardItem[] = [
-      {title:"playcount", value: item.playcount},
+      {title:"play", value: item.playcount},
       {title:"listeners", value: item.listeners}
     ]
 
@@ -24,11 +25,12 @@ export const TopTracks: React.FC<{artistName: string}> = ({artistName}) => {
   const {data, isLoading, isError, isSuccess} = useTopTracks(artistName);
 
   return (
-
-     <GenericList 
-        data={data?.toptracks.track}
-        {...{isLoading, isError, isSuccess}}
-        keyExtractor={({name}) => name.replace(' ', '-').toLowerCase()}
-        renderItem={renderListItem}
-       />
+    <GenericContainer title="Top Tracks">
+      <GenericList 
+          data={data?.toptracks.track}
+          {...{isLoading, isError, isSuccess}}
+          keyExtractor={({name}) => name.replace(' ', '-').toLowerCase()}
+          renderItem={renderListItem}
+        />
+    </GenericContainer>
   )};

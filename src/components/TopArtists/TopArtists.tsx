@@ -4,7 +4,7 @@ import { IArtist } from "../../service/models/artists-model";
 import utils, { PATHS } from "../../utils";
 import { TopArtistCard } from "../TopArtistsCard";
 import { TCardItem } from "../Card/card-types";
-import { GenericList } from "../List";
+import { GenericList } from "../GenericList";
 
 export const TopArtists = () => {
 

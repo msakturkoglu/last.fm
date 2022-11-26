@@ -14,12 +14,15 @@ const CardItems: React.FC<{items?: TCardItem[]}> = ({items} )=> {
     return (
        <CardIemsWrapper>
             {
-                items?.map(({title, value}) => 
+                items?.map(({title, value}) => {
+                    return value ? (
                 <CardItemRow>
                     <CardItemTitle>{title}</CardItemTitle>
                     <CardItemTitle>:</CardItemTitle>
                     <CardItemValue>{value}</CardItemValue>
                 </CardItemRow>)
+                    : null
+                })
             }
         </CardIemsWrapper>  
     )

@@ -1,19 +1,6 @@
 import { PropsWithChildren } from 'react';
-import styled from 'styled-components';
-
-const ListElement = styled.ul``;
-const ListItem = styled.li``;
-
-
-type TListDataProps<T> = {
-    data?: T[];
-    isLoading?: boolean;
-    isError?: boolean;
-    isSuccess?: boolean;
-    itemKey?: string;
-    renderItem: (item: T) => React.ReactNode;
-    keyExtractor: (item: T) => string;
-}
+import { ListElement, ListItem } from './generic-list-css';
+import { TListDataProps } from './generic-list-types';
 
 export const GenericList = <T extends unknown >({
     data, 

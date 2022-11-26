@@ -2,15 +2,15 @@ import { useTopAlbums } from "../../hooks";
 import { IAlbum } from "../../service/models/album-model";
 import utils from "../../utils";
 import { TCardItem } from "../Card/card-types";
-import { GenericList } from "../List";
+import { GenericContainer } from "../GenericContainer";
+import { GenericList } from "../GenericList";
 import { TopAlbumsCard } from "../TopAlbumsCard";
 
 export const TopAlbums: React.FC<{artistName: string}> = ({artistName}) => {
 
   const renderListItem = (item: IAlbum) => {
     const cardItems: TCardItem[] = [
-      {title:"playcount", value: item.playcount},
-      {title:"listeners", value: item.listeners}
+      {title:"play", value: item.playcount},
     ]
 
     return (
@@ -25,11 +25,13 @@ export const TopAlbums: React.FC<{artistName: string}> = ({artistName}) => {
   const {data, isLoading, isError, isSuccess} = useTopAlbums(artistName);
 
   return (
+    <GenericContainer title="Top Albums">
 
      <GenericList 
         data={data?.topalbums.album}
         {...{isLoading, isError, isSuccess}}
         keyExtractor={({name}) => name.replace(' ', '-').toLowerCase()}
         renderItem={renderListItem}
-       />
+        />
+    </GenericContainer>
   )};
