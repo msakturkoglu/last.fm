@@ -3,8 +3,8 @@ import { StyledImage } from './image.css';
 
 export type TImageSize = "small" | "medium" | "large" | "extralarge";
 
-export const Image: React.FC<{src?: string}> = ({src, ...rest}) => {
+export const Image: React.FC<{src?: string, style?: React.CSSProperties}> = (props) => {
   return (
-    <StyledImage src={src} alt="" {...rest}/>
+    <StyledImage alt="" {...props}/>
   )
 }

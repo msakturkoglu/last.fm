@@ -9,6 +9,8 @@ export type TCardLink<PayloadType> = {
 }
 
 export type TCardProps<LinkPayloadType> = {
+    style?: React.CSSProperties;
+    imageStyle?: React.CSSProperties;
     children?: React.ReactNode;
     image?: string;
     items?: TCardItem[];

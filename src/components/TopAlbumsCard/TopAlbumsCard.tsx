@@ -8,7 +8,7 @@ type TTopTrackCardProps<T> = PropsWithChildren<TCardProps<T> & {artistName: stri
 
 export const TopAlbumsCard = <T extends unknown>({artistName, trackName, ...props}: TTopTrackCardProps<T>) => {
   return (
-    <Card {...props}>
+    <Card {...props} style={{width: "30rem"}}>
         <AlbumContentWrapper>
             <AlbumName>{trackName}</AlbumName>
             <AlbumArtistName>{artistName}</AlbumArtistName>

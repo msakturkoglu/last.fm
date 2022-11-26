@@ -1,11 +1,18 @@
+import styled from 'styled-components';
+import { GenericContainer } from "../../components/GenericContainer";
 import { TopArtists } from "../../components/TopArtists";
-import { HomeContainer } from "./Home.css";
+
+
+const Container = styled(GenericContainer)`
+  width: 50%;
+  padding-top: 3rem;
+`;
 
 export const Home = () => {
 
   
   return (
-    <HomeContainer>
+    <Container title="Top Artist List">
       <TopArtists />
-    </HomeContainer>
+    </Container>
   )};

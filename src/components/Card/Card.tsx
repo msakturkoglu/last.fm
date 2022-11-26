@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Image } from '../Image';
 import { TCardItem, TCardLink, TCardProps } from './card-types';
-import { CardContainer, CardIemsWrapper, CardItemRow, CardItemTitle, CardItemValue } from './card.css';
+import { CardContainer, CardIemsWrapper, CardItemTitle, CardItemValue } from './Card.css';
 
 const StyledLink = styled(Link)`
     text-decoration: none;
@@ -16,11 +16,11 @@ const CardItems: React.FC<{items?: TCardItem[]}> = ({items} )=> {
             {
                 items?.map(({title, value}) => {
                     return value ? (
-                <CardItemRow>
+                <>
                     <CardItemTitle>{title}</CardItemTitle>
                     <CardItemTitle>:</CardItemTitle>
                     <CardItemValue>{value}</CardItemValue>
-                </CardItemRow>)
+                </>)
                     : null
                 })
             }
@@ -33,8 +33,8 @@ const LinkWrapper = <T extends unknown>({children, link}: PropsWithChildren<{lin
 export const Card = <LinkPayloadType extends unknown>(props: TCardProps<LinkPayloadType>) => {
 
     const renderContent = () => (
-        <CardContainer>
-            <Image src={props.image} />
+        <CardContainer style={props.style}>
+            <Image src={props.image} style={props.imageStyle}/>
             { props.children }
             <CardItems items={props.items}/>
         </CardContainer>

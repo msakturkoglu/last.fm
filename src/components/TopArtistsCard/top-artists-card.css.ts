@@ -11,6 +11,7 @@ export const ArtistWrapper = styled.div`
     font-size: 0.8rem;
     border-bottom: 1px solid #e0d8d8;
     padding-bottom: 0.1rem;
+    width: 50%
   }
 `;
 

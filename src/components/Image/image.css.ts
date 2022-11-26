@@ -5,5 +5,6 @@ export const StyledImage = styled.img`
   overflow: hidden;
   border-radius: 50%;
   border: 1px solid lightpink;
-  width: ${props => props.width || 'auto'}
+  width: ${props => props.width || 'auto'};
+  height: -webkit-fill-available;
 `;

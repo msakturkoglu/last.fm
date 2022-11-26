@@ -13,6 +13,7 @@ export const AlbumName = styled.h1`
 `;
 
 export const AlbumArtistName = styled.p`
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding: 0.8rem 0;
+    width: max-content;
 `;

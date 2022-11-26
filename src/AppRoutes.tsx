@@ -10,6 +10,11 @@ const GlobalStyles = createGlobalStyle`
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   }
+
+  #root {
+    display: flex;
+    justify-content: center;;
+  }
 `;
 
 export default function AppRoutes() {
