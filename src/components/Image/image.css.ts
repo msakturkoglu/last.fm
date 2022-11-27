@@ -7,4 +7,5 @@ export const StyledImage = styled.img`
   border: 1px solid lightpink;
   width: ${props => props.width || 'auto'};
   height: -webkit-fill-available;
+  flex-shrink: 0;
 `;

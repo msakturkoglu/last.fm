@@ -1,6 +1,6 @@
 import { TImageSize } from "../components/Image/Image";
-import { TArtistImage } from "../service/models/artists-model";
+import { TImage } from "../service/models/base-model";
 
-export function getArtistImage(images: TArtistImage[], size: TImageSize) {
+export function getArtistImage(images: TImage[], size: TImageSize) {
     return images.find(item => item.size === size)?.["#text"];
 }

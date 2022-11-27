@@ -1,18 +1,16 @@
 import { PropsWithChildren } from "react";
-import { Card } from "../Card";
+import { ArtistDetailCard, ArtistDetailCardContentWrapper, ArtistDetailDescription, ArtistDetailTitle } from "../../styles/shared-styles";
 import { TCardProps } from "../Card/card-types"
-import { AlbumArtistName, AlbumContentWrapper, AlbumName } from "./top-albums-card.css";
-
 
 type TTopTrackCardProps<T> = PropsWithChildren<TCardProps<T> & {artistName: string; trackName: string}>;
 
 export const TopAlbumsCard = <T extends unknown>({artistName, trackName, ...props}: TTopTrackCardProps<T>) => {
   return (
-    <Card {...props} style={{width: "30rem"}}>
-        <AlbumContentWrapper>
-            <AlbumName>{trackName}</AlbumName>
-            <AlbumArtistName>{artistName}</AlbumArtistName>
-        </AlbumContentWrapper>
-    </Card>
+    <ArtistDetailCard {...props}>
+        <ArtistDetailCardContentWrapper>
+            <ArtistDetailTitle>{trackName}</ArtistDetailTitle>
+            <ArtistDetailDescription>{artistName}</ArtistDetailDescription>
+        </ArtistDetailCardContentWrapper>
+    </ArtistDetailCard>
   )
 }

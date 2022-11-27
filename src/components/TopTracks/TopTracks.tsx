@@ -18,7 +18,7 @@ export const TopTracks: React.FC<{artistName: string}> = ({artistName}) => {
       <TopTracksCard 
         trackName={item.name}
         artistName={artistName} items={cardItems}
-        image={utils.getArtistImage(item.artist.image || [], "medium")}
+        image={utils.getArtistImage(item.image || [], "medium")}
       />
     )
   }

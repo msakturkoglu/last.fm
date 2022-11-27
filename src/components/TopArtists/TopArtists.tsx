@@ -30,7 +30,7 @@ export const TopArtists = () => {
 
   const { data, isLoading, isError, isSuccess, fetchNextPage} = useTopArtists();
 
-  const {ref, inView} = useInView({rootMargin: "150px", threshold: 1});
+  const {ref, inView} = useInView();
 
   useEffect(() => {
     if (inView) {

@@ -19,7 +19,7 @@ const CardItems: React.FC<{items?: TCardItem[]}> = ({items} )=> {
                     return value ? (
                 <React.Fragment key={short.generate()}>
                     <CardItemTitle>{title}</CardItemTitle>
-                    <CardItemTitle>:</CardItemTitle>
+                    <label>:</label>
                     <CardItemValue>{value}</CardItemValue>
                 </React.Fragment>)
                     : null
@@ -34,7 +34,7 @@ const LinkWrapper = <T extends unknown>({children, link}: PropsWithChildren<{lin
 export const Card = <LinkPayloadType extends unknown>(props: TCardProps<LinkPayloadType>) => {
 
     const renderContent = () => (
-        <CardContainer style={props.style}>
+        <CardContainer {...props}>
             <Image src={props.image} style={props.imageStyle}/>
             { props.children }
             <CardItems items={props.items}/>
