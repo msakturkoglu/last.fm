@@ -1,4 +1,5 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
+import short from 'short-uuid';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Image } from '../Image';
@@ -16,11 +17,11 @@ const CardItems: React.FC<{items?: TCardItem[]}> = ({items} )=> {
             {
                 items?.map(({title, value}) => {
                     return value ? (
-                <>
+                <React.Fragment key={short.generate()}>
                     <CardItemTitle>{title}</CardItemTitle>
                     <CardItemTitle>:</CardItemTitle>
                     <CardItemValue>{value}</CardItemValue>
-                </>)
+                </React.Fragment>)
                     : null
                 })
             }

@@ -6,6 +6,7 @@ import { TopArtists } from "../../components/TopArtists";
 const Container = styled(GenericContainer)`
   width: 50%;
   padding-top: 3rem;
+  height: 101vh;
 `;
 
 export const Home = () => {

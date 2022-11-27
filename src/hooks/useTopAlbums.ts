@@ -4,6 +4,6 @@ import { TTopAlbums } from "../service/models/top-albums-model";
 
 
 export const useTopAlbums = (artist: string) => {
-    return useQuery<TTopAlbums, any, TTopAlbums, string[] >(['topalbums', artist], () => apiController.getTopAlbums(artist));
+    return useQuery<TTopAlbums, any, TTopAlbums, string[]>(['topalbums', artist], () => apiController.getTopAlbums(artist));
 
 }

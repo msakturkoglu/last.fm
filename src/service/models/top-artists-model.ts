@@ -6,6 +6,6 @@ export type TTopArtistsKey = "artists";
 export type TTopArtists = {
     [key in TTopArtistsKey]: {
         artist: IArtist[];
-        attr: IAttributes;
+        "@attr": IAttributes;
     }
 }
