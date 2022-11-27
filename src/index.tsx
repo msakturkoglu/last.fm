@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Reset } from 'styled-reset';
-import AppRoutes from './AppRoutes';
+import { App } from './App';
 
 const queryClient = new QueryClient();
 
@@ -14,7 +14,7 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <Reset />
-      <AppRoutes />
+      <App />
     </QueryClientProvider>
   </React.StrictMode>
 );

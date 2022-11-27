@@ -5,11 +5,12 @@ export const ArtistWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  color: ${props => props.theme.cardContentText};
 
   & p {
     font-weight: 100;
     font-size: 0.8rem;
-    border-bottom: 1px solid #e0d8d8;
+    border-bottom: 1px solid ${props => props.theme.cardContentText};
     padding-bottom: 0.1rem;
     width: 50%
   }

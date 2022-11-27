@@ -2,7 +2,13 @@ import styled from 'styled-components';
 import { ArtistDetailCard } from '../../styles/shared-styles';
 import { device } from '../../utils';
 
-export const ArtistCard = styled(ArtistDetailCard)``;
+export const ArtistCard = styled(ArtistDetailCard)`
+    min-height: 3em;
+
+    @media ${device.laptopL} {
+      min-height: 5em;
+    }
+`;
 
 export const ArtistContainer = styled.div`
 
@@ -10,6 +16,7 @@ export const ArtistContainer = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 0;
+    margin-top: 4rem;
     overflow: hidden;
     height: 650px;
     width: 100%;
@@ -20,7 +27,7 @@ export const ArtistContainer = styled.div`
     }
 
     @media ${device.laptop} {
-        margin: 3rem;
+        height: 750px;
     }
 
     @media ${device.laptopL} {
@@ -73,4 +80,12 @@ export const ArtistSection = styled.section`
     padding: 13px;
     width: 100%;
   }
+`;
+
+export const Information = styled.div`
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: ${props => props.theme.text}
 `;
