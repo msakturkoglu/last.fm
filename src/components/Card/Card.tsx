@@ -9,6 +9,7 @@ import { CardContainer, CardIemsWrapper, CardItemTitle, CardItemValue } from './
 const StyledLink = styled(Link)`
     text-decoration: none;
     color: inherit;
+    flex: 1;
 `;
 
 const CardItems: React.FC<{items?: TCardItem[]}> = ({items} )=> {

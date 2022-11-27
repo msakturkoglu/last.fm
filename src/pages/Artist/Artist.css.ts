@@ -1,23 +1,8 @@
 import styled from 'styled-components';
-import { Card } from '../../components/Card';
+import { ArtistDetailCard } from '../../styles/shared-styles';
 import { device } from '../../utils';
 
-export const ArtistCard = styled(Card)`
-    margin: 0;
-    padding: 0.5rem;
-    min-height : 3.5rem;
-    width: -webkit-fill-available;
-
-    @media ${device.tablet} {
-      width: 30rem;
-    }
-    
-    @media ${device.laptop}{
-      width: -webkit-fill-available;
-      justify-content: flex-start;
-      padding: 2rem;
-  }
-`;
+export const ArtistCard = styled(ArtistDetailCard)``;
 
 export const ArtistContainer = styled.div`
 
