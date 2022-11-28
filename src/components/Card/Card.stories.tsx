@@ -20,6 +20,6 @@ const Template: ComponentStory<typeof Card> = (args) => (
 
 export const Section = Template.bind({})
 Section.args = {
-    link: { url: 'aaa', payload: 'Taylor Swift' },
+    link: { url: '', payload: 'Taylor Swift' },
     image: 'https://lastfm.freetls.fastly.net/i/u/64s/3b54885952161aaea4ce2965b2db1638.png',
 }
