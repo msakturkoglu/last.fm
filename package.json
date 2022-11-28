@@ -25,6 +25,7 @@
     },
     "lint-staged": {
         "*.{js,jsx,ts,tsx,md,html,css}": [
+            "stylelint './src/**/*.ts'",
             "eslint",
             "prettier --write"
         ]
