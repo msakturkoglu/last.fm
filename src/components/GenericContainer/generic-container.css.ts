@@ -6,12 +6,13 @@ export const Container = styled.div`
     flex-direction: column;
     padding: 6px;
     width: 100%;
+    background-color: ${props => props.theme.background};
 `;
 
 export const ContainerTitle = styled.h1`
     font-weight: 600;   
     text-align: center;
-    color: deeppink;
+    color: ${props => props.theme.listTitle};
     padding: 0;
     font-size: 1.2rem;
     padding-bottom: 1rem;

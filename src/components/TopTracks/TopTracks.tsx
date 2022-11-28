@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { useTopTracks } from "../../hooks";
+import { IStatus } from "../../pages/Artist/artist-types";
 import { ITrack } from "../../service/models/tracks-model";
 import utils from "../../utils";
 import { TCardItem } from "../Card/card-types";
@@ -6,7 +8,7 @@ import { GenericContainer } from "../GenericContainer";
 import { GenericList } from "../GenericList";
 import { TopTracksCard } from "../TopTracksCard";
 
-export const TopTracks: React.FC<{artistName: string}> = ({artistName}) => {
+export const TopTracks: React.FC<{artistName: string;  updateStatus?: (status: IStatus) => void}> = ({artistName, updateStatus}) => {
 
   const renderListItem = (item: ITrack) => {
     const cardItems: TCardItem[] = [
@@ -24,6 +26,10 @@ export const TopTracks: React.FC<{artistName: string}> = ({artistName}) => {
   }
   
   const {data, isLoading, isError, isSuccess} = useTopTracks(artistName);
+  
+  useEffect(() => {
+    updateStatus && updateStatus({tracks: {isLoading, isError}});
+  }, [isLoading, isError, updateStatus])
 
   return (
     <GenericContainer title="Top Tracks">

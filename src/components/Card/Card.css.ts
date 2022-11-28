@@ -5,12 +5,12 @@ export const CardContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(#f8f8f8, #fff);
+    background: linear-gradient(${props => props.theme.cardBgPrimary + ',' +  props.theme.cardBgSecondary});
     box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
     border-radius: 6px;
     overflow: hidden;
     /* padding: 15px; */
-    border: 1px solid #f3f3f3;
+    border: 1px solid ${props => props.theme.cardBorder};
     margin: 0;
     padding: 0.5rem;
     flex: 1;
@@ -73,7 +73,6 @@ export const CardIemsWrapper = styled.div`
     & span {
         text-align: right;
         margin-left: 0.2rem;
-        color: #999999;
         font-size: 0.3em;
     }
 
@@ -83,4 +82,6 @@ export const CardItemTitle = styled.label`
     text-align: right;
 `;
 
-export const CardItemValue = styled.span``;
+export const CardItemValue = styled.span`
+    color: ${props => props.theme.counters}
+`;

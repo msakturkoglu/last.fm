@@ -3,6 +3,9 @@ import { Card } from '../components/Card';
 import { device } from '../utils';
 
 export const ArtistDetailCard = styled(Card)`
+
+  color: ${props => props.theme.cardContentText};
+
   @media ${device.laptop} {
     max-width: 18em;
     height: 5em;

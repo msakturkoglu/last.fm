@@ -1,4 +1,7 @@
+import { useEffect } from "react";
+import { updateStatement } from "typescript";
 import { useTopAlbums } from "../../hooks";
+import { IStatus } from "../../pages/Artist/artist-types";
 import { IAlbum } from "../../service/models/album-model";
 import utils from "../../utils";
 import { TCardItem } from "../Card/card-types";
@@ -6,7 +9,8 @@ import { GenericContainer } from "../GenericContainer";
 import { GenericList } from "../GenericList";
 import { TopAlbumsCard } from "../TopAlbumsCard";
 
-export const TopAlbums: React.FC<{artistName: string}> = ({artistName}) => {
+export const TopAlbums: React.FC<{artistName: string, updateStatus?: (status: IStatus) => void}> = ({artistName, updateStatus}) => {
+
 
   const renderListItem = (item: IAlbum) => {
     const cardItems: TCardItem[] = [
@@ -24,6 +28,10 @@ export const TopAlbums: React.FC<{artistName: string}> = ({artistName}) => {
   
   const {data, isLoading, isError, isSuccess} = useTopAlbums(artistName);
 
+  useEffect(() => {
+    updateStatus && updateStatus({albums: {isLoading, isError}});
+  }, [isLoading, isError, updateStatus])
+  
   return (
     <GenericContainer title="Top Albums">
 
