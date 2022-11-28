@@ -1,1 +1,1 @@
-export { TopTracksCard } from './TopTracksCard';
+export { TopTracksCard } from './TopTracksCard'

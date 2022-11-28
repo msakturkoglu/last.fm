@@ -1,12 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 export const useAppTheme = (): [boolean, () => void] => {
-    const [isDark, setIsDark] = useState(false);
+    const [isDark, setIsDark] = useState(false)
 
-    const toogleTheme = () => setIsDark(!isDark);
+    const toogleTheme = (): void => setIsDark(!isDark)
 
-    return [
-        isDark,
-        toogleTheme
-    ]
-};
+    return [isDark, toogleTheme]
+}

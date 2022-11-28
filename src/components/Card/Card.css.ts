@@ -1,16 +1,16 @@
-import styled from 'styled-components';
-import { device } from '../../utils';
+import styled from 'styled-components'
+import { device } from '../../utils'
 
 export const CardContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(${props => props.theme.cardBgPrimary + ',' +  props.theme.cardBgSecondary});
-    box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+    background: linear-gradient(${(props) => props.theme.cardBgPrimary}, ${(props) => props.theme.cardBgSecondary});
+    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
     border-radius: 6px;
     overflow: hidden;
     /* padding: 15px; */
-    border: 1px solid ${props => props.theme.cardBorder};
+    border: 1px solid ${(props) => props.theme.cardBorder};
     margin: 0;
     padding: 0.5rem;
     flex: 1;
@@ -20,18 +20,16 @@ export const CardContainer = styled.div`
         height: 2.5rem;
     }
 
-
     @media ${device.tablet} {
-
-      & img {
+        & img {
             height: 3.5rem;
         }
     }
 
     @media ${device.laptop} {
-      min-height : 3.5rem;
-      justify-content: flex-start;
-      padding: 1rem;
+        min-height: 3.5rem;
+        justify-content: flex-start;
+        padding: 1rem;
         width: -webkit-fill-available;
         & img {
             height: 3.5rem;
@@ -44,7 +42,7 @@ export const CardContainer = styled.div`
             height: 5.5rem;
         }
     }
-`;
+`
 
 export const CardIemsWrapper = styled.div`
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -75,13 +73,12 @@ export const CardIemsWrapper = styled.div`
         margin-left: 0.2rem;
         font-size: 0.3em;
     }
-
-`;
+`
 
 export const CardItemTitle = styled.label`
     text-align: right;
-`;
+`
 
 export const CardItemValue = styled.span`
-    color: ${props => props.theme.counters}
-`;
+    color: ${(props) => props.theme.counters};
+`

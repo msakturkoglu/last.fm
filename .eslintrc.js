@@ -12,7 +12,12 @@ module.exports = {
     },
     plugins: ['react'],
     rules: {
-        '@typescript-eslint/consistent-type-assertions': 'warn',
-        '@typescript-eslint/consistent-type-definitions': 'warn',
+        '@typescript-eslint/consistent-type-assertions': 'off',
+        '@typescript-eslint/consistent-type-definitions': 'off',
+        'react/prop-types': 'off',
+        'typescript-eslint/strict-boolean-expressions': 'off',
+        '@typescript-eslint/prefer-nullish-coalescing': 'off',
+        '@typescript-eslint/strict-boolean-expression': 'off',
+        '@typescript-eslint/strict-boolean-expressions': 'off',
     },
 }

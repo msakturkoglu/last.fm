@@ -1,1 +1,1 @@
-export { TopAlbums } from './TopAlbums';
+export { TopAlbums } from './TopAlbums'

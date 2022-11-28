@@ -1,1 +1,1 @@
-export { GenericList } from './GenericList';
+export { GenericList } from './GenericList'

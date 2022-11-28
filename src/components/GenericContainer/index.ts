@@ -1,1 +1,1 @@
-export { GenericContainer } from './GenericContainer';
+export { GenericContainer } from './GenericContainer'

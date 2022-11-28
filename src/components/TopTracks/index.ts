@@ -1,1 +1,1 @@
-export { TopTracks } from './TopTracks';
+export { TopTracks } from './TopTracks'

@@ -1,15 +1,25 @@
-import { PropsWithChildren } from "react";
-import { ArtistDetailCard, ArtistDetailCardContentWrapper, ArtistDetailDescription, ArtistDetailTitle } from "../../styles/shared-styles";
-import { TCardProps } from "../Card/card-types"
+import { PropsWithChildren } from 'react'
+import {
+    ArtistDetailCard,
+    ArtistDetailCardContentWrapper,
+    ArtistDetailDescription,
+    ArtistDetailTitle,
+} from '../../styles/shared-styles'
+import { TCardProps } from '../Card/card-types'
 
-type TTopTrackCardProps<T> = PropsWithChildren<TCardProps<T> & {artistName: string; trackName: string}>;
-export const TopTracksCard = <T extends unknown>({artistName, trackName, ...props}: TTopTrackCardProps<T>) => {
-  return (
-    <ArtistDetailCard {...props}>
-        <ArtistDetailCardContentWrapper>
-            <ArtistDetailTitle>{trackName}</ArtistDetailTitle>
-            <ArtistDetailDescription>{artistName}</ArtistDetailDescription>
-        </ArtistDetailCardContentWrapper>
-    </ArtistDetailCard>
-  )
+type TTopTrackCardProps<T> = PropsWithChildren<TCardProps<T> & { artistName: string; trackName: string }>
+
+export const TopTracksCard = <T extends unknown>({
+    artistName,
+    trackName,
+    ...props
+}: TTopTrackCardProps<T>): JSX.Element => {
+    return (
+        <ArtistDetailCard {...props}>
+            <ArtistDetailCardContentWrapper>
+                <ArtistDetailTitle>{trackName}</ArtistDetailTitle>
+                <ArtistDetailDescription>{artistName}</ArtistDetailDescription>
+            </ArtistDetailCardContentWrapper>
+        </ArtistDetailCard>
+    )
 }

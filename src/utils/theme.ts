@@ -1,29 +1,29 @@
-import { colors } from "./constants/colors";
+import { colors } from './constants/colors'
 
-type TThemeType = "dark" | "light";
+type TThemeType = 'dark' | 'light'
 
 export interface IThemeOptions {
-    name: TThemeType;
-    background: string; 
-    header: string;
-    list: string;
-    listTitle: string;
-    cardBgPrimary: string;
-    cardBgSecondary: string;
-    cardBorder: string;
-    cardContentText: string;
-    counters: string;
-    text: string;
+    name: TThemeType
+    background: string
+    header: string
+    list: string
+    listTitle: string
+    cardBgPrimary: string
+    cardBgSecondary: string
+    cardBorder: string
+    cardContentText: string
+    counters: string
+    text: string
 }
 
 interface ITheme {
-    light: Partial<IThemeOptions>;
-    dark: Partial<IThemeOptions>;
+    light: Partial<IThemeOptions>
+    dark: Partial<IThemeOptions>
 }
 
-export const themes: ITheme  = {
+export const themes: ITheme = {
     light: {
-        name: "light",
+        name: 'light',
         background: colors.lightGray,
         header: colors.darkGray,
         list: colors.lightGray,
@@ -37,9 +37,9 @@ export const themes: ITheme  = {
     },
 
     dark: {
-        name: "dark",
+        name: 'dark',
         background: colors.darkMagenta,
-        header: "#3e0f3d",
+        header: '#3e0f3d',
         list: colors.darkMagenta,
         listTitle: colors.pink,
         cardBgPrimary: colors.darkMagenta,
@@ -48,6 +48,5 @@ export const themes: ITheme  = {
         cardContentText: colors.fuchsia,
         counters: colors.lightBlue,
         text: colors.white,
-
-    }
-  };
+    },
+}
