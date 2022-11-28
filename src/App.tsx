@@ -12,8 +12,6 @@ const GlobalStyles = createGlobalStyle`
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   }
-
-
 `;
 
 const AppContainer = styled.div`
