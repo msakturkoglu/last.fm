@@ -3,11 +3,7 @@ module.exports = {
         browser: true,
         es2021: true,
     },
-    extends: [
-        'plugin:react/recommended',
-        'standard-with-typescript',
-        'prettier',
-    ],
+    extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:react/jsx-runtime', 'prettier'],
     overrides: [],
     parserOptions: {
         ecmaVersion: 'latest',
@@ -15,5 +11,8 @@ module.exports = {
         project: './tsconfig.json',
     },
     plugins: ['react'],
-    rules: {},
+    rules: {
+        '@typescript-eslint/consistent-type-assertions': 'warn',
+        '@typescript-eslint/consistent-type-definitions': 'warn',
+    },
 }

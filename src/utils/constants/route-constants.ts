@@ -1,8 +1,8 @@
 export enum PATHS {
-    HOME= '/',
-    ARTIST= '/artist',
-  };
-  
-  export type TRouteParams = {
-    artistName?: string;
-  };
+    HOME = '/',
+    ARTIST = '/artist',
+}
+
+export interface IRouteParams {
+    artistName?: string
+}
